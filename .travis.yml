@@ -52,5 +52,3 @@ jobs:
         password: $CF_PASSWORD
         organization: $CF_ORG
         space: review
-      before_script:
-        - chmod +x gradlew
