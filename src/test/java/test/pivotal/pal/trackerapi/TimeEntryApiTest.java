@@ -1,5 +1,6 @@
 package test.pivotal.pal.trackerapi;
 
+import ch.qos.logback.core.net.SyslogOutputStream;
 import com.jayway.jsonpath.DocumentContext;
 import io.pivotal.pal.tracker.PalTrackerApplication;
 import io.pivotal.pal.tracker.TimeEntry;
@@ -107,6 +108,8 @@ public class TimeEntryApiTest {
     @Test
     public void testDelete() throws Exception {
         Long id = createTimeEntry();
+
+        System.out.println("id" + id);
 
 
         ResponseEntity<String> deleteResponse = restTemplate.exchange("/time-entries/" + id, HttpMethod.DELETE, null, String.class);
